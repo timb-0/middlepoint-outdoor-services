@@ -672,31 +672,7 @@
     .gallery-header { text-align: center; margin-bottom: 3.5rem; }
     .gallery-header .section-eyebrow { justify-content: center; }
     .gallery-header .section-lead { margin-inline: auto; }
-    .gallery-tabs {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-    }
-    .gallery-tab {
-      padding: 0.55rem 1.4rem;
-      border-radius: 100px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-mid);
-      background: var(--white);
-      border: 1.5px solid var(--stone);
-      transition: var(--transition);
-      cursor: pointer;
-    }
-    .gallery-tab.active, .gallery-tab:hover {
-      background: var(--forest);
-      color: var(--white);
-      border-color: var(--forest);
-      box-shadow: 0 4px 14px rgba(45,106,79,.3);
-    }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1413,18 +1389,10 @@
         <p class="section-lead reveal reveal-delay-2">Browse real projects completed across Nassau and Suffolk County — from intimate backyard retreats to full commercial property transformations.</p>
       </div>
 
-      <div class="gallery-tabs reveal" role="tablist" aria-label="Filter gallery by project type">
-        <button class="gallery-tab active" role="tab" aria-selected="true">All Projects</button>
-        <button class="gallery-tab" role="tab" aria-selected="false">Hardscaping</button>
-        <button class="gallery-tab" role="tab" aria-selected="false">Landscaping</button>
-        <button class="gallery-tab" role="tab" aria-selected="false">Lighting</button>
-        <button class="gallery-tab" role="tab" aria-selected="false">Lawn Care</button>
-      </div>
-
       <div class="gallery-grid reveal">
         <div class="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=900&auto=format&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&auto=format&fit=crop&q=80"
             alt="Complete backyard patio transformation with stone pavers"
             loading="lazy"
           />
@@ -1438,7 +1406,7 @@
         </div>
         <div class="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&auto=format&fit=crop&q=80"
             alt="Lush landscaped front yard with garden beds"
             loading="lazy"
           />
@@ -1451,8 +1419,8 @@
         </div>
         <div class="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1631557874948-f63a1ece8e53?w=600&auto=format&fit=crop&q=80"
-            alt="Modern outdoor lighting along a stone walkway"
+            src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600&auto=format&fit=crop&q=80"
+            alt="Modern outdoor garden path with lighting"
             loading="lazy"
           />
           <div class="gallery-overlay">
@@ -1464,7 +1432,7 @@
         </div>
         <div class="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=600&auto=format&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&auto=format&fit=crop&q=80"
             alt="Perfectly maintained green lawn"
             loading="lazy"
           />
@@ -1477,7 +1445,7 @@
         </div>
         <div class="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1597413545419-4013a565e814?w=600&auto=format&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&auto=format&fit=crop&q=80"
             alt="Natural stone retaining wall with plantings"
             loading="lazy"
           />
@@ -1885,15 +1853,7 @@
 
     reveals.forEach(el => observer.observe(el));
 
-    // ---- GALLERY TABS ----
-    const tabs = document.querySelectorAll('.gallery-tab');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-      });
-    });
+
 
     // ---- CONTACT FORM ----
     const form = document.getElementById('estimate-form');
